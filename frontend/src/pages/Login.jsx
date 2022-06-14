@@ -7,7 +7,7 @@ import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
 function Login() {
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
@@ -34,7 +34,7 @@ function Login() {
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
-    setFromData((prevState) => ({
+    setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
@@ -57,7 +57,7 @@ function Login() {
 
   return (
     <>
-      <section className='"heading'>
+      <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
         </h1>
@@ -84,7 +84,7 @@ function Login() {
               id='password'
               name='password'
               value={password}
-              placeholder='Enter your password'
+              placeholder='Enter password'
               onChange={onChange}
             />
           </div>
